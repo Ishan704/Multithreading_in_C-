@@ -9,11 +9,11 @@ find_package(CURL REQUIRED)
 add_executable(target_singlethreaded  src/Single_threaded.cpp)
 add_executable(target_multithread src/Basic_Multithreading_Code.cpp)
 add_executable(target_delay  src/Delays_to_thread.cpp )
-add_executable(fetch_time  src/fetchTimeMultithreaded.cpp )
+add_executable(atomic_output  src/atomic_operation.cpp )
 
 
+target_link_libraries(atomic_output pthread)
 target_link_libraries(target_multithread  pthread)
 target_link_libraries(target_delay  pthread)
-target_link_libraries(fetch_time  pthread)
 
 
